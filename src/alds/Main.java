@@ -19,7 +19,8 @@ public class Main {
 
 		//DFS dfs = new DFS(vcount, mat);
 		
-		BFS bfs = new BFS(vcount, mat);
+		//BFS bfs = new BFS(vcount, mat);
+		Prims prims = new Prims(vcount, mat);
 
 	}
 
