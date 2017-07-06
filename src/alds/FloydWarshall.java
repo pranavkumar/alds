@@ -1,15 +1,17 @@
 package alds;
 
-public class FloydWarshall {
-	int[][] mAdjMat;
-	int[][] dist;
+/*
+ * multi source shortest path. edges can have negative weight but no negative cycle allowed.  
+ */
 
+public class FloydWarshall {
+	
 	final static int inf = 9999;
 
 	public FloydWarshall(int vcount, int[][] adjMat) {
-		mAdjMat = adjMat;
+		
 		// initialize distance from self to 0 and from others to infinity;
-		dist = new int[vcount][vcount];
+		int[][] dist = new int[vcount][vcount];
 		for (int i = 0; i < vcount; i++) {
 			for (int j = 0; j < vcount; j++) {
 				if (i == j) {
@@ -23,7 +25,7 @@ public class FloydWarshall {
 		// initialize distance using adjacency matrix;
 		for (int i = 0; i < vcount; i++) {
 			for (int j = 0; j < vcount; j++) {
-				dist[i][j] = mAdjMat[i][j];
+				dist[i][j] = adjMat[i][j];
 
 			}
 		}
