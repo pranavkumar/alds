@@ -17,7 +17,9 @@ public class Main {
 		}
 		in.close();
 
-		DFS dfs = new DFS(vcount, mat);
+		//DFS dfs = new DFS(vcount, mat);
+		
+		BFS bfs = new BFS(vcount, mat);
 
 	}
 
