@@ -17,7 +17,7 @@ public class Main {
 		}
 		in.close();
 
-		FloydWarshall fw = new FloydWarshall(vcount, mat);
+		DFS dfs = new DFS(vcount, mat);
 
 	}
 
