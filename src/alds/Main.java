@@ -20,7 +20,9 @@ public class Main {
 		//DFS dfs = new DFS(vcount, mat);
 		
 		//BFS bfs = new BFS(vcount, mat);
-		Prims prims = new Prims(vcount, mat);
+		//Prims prims = new Prims(vcount, mat);
+		
+		Dijkstra d = new Dijkstra(vcount, mat, 0);
 
 	}
 
