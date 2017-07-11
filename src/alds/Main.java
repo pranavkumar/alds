@@ -22,7 +22,7 @@ public class Main {
 		//BFS bfs = new BFS(vcount, mat);
 		//Prims prims = new Prims(vcount, mat);
 		
-		Dijkstra d = new Dijkstra(vcount, mat, 0);
+		BellmanFord bf = new BellmanFord(vcount, mat, 0);
 
 	}
 
