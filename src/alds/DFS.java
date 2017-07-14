@@ -15,7 +15,7 @@ public class DFS {
 		ArrayList<Integer> unvisited = new ArrayList<Integer>();
 
 		for (int i = 0; i < mVcount; i++) {
-			if (mGraph[v][i] == 1 && !visited.contains(i)) {
+			if (mGraph[v][i] !=0  && !visited.contains(i)) {
 				unvisited.add(i);
 			}
 		}

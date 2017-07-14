@@ -26,6 +26,28 @@ public class Graph {
 
 	}
 
+	public ArrayList<Edge> edgeWithSrc(int src) {
+		ArrayList<Edge> _edges = new ArrayList<Edge>();
+		for (Edge e : edges) {
+			if (e.src == src) {
+				_edges.add(e);
+			}
+		}
+		return _edges;
+	}
+	
+	public ArrayList<Edge> edgeWithDest(int dest) {
+		ArrayList<Edge> _edges = new ArrayList<Edge>();
+		for (Edge e : edges) {
+			if (e.dest == dest) {
+				_edges.add(e);
+			}
+		}
+		return _edges;
+	}
+
+	
+
 	public Graph(int vcount, int[][] graph) {
 		for (int i = 0; i < vcount; i++) {
 			for (int j = 0; j < vcount; j++) {
@@ -39,6 +61,27 @@ public class Graph {
 
 	public Graph() {
 
+	}
+
+	//gets adj mat for directed graph
+	public int[][] getAdjMat() {
+		if (this.getVertexCount() > 0) {
+			int vcount = this.getVertexCount();
+			int[][] adj = new int[vcount][vcount];
+			for (int i = 0; i < vcount; i++) {
+				for (int j = 0; j < vcount; j++) {
+					adj[i][j] = 0;
+				}
+				ArrayList<Edge> _edges = this.edgeWithSrc(i);
+				for (Edge e : _edges) {
+					adj[i][e.dest] = e.weight;
+				}
+
+			}
+			return adj;
+		} else {
+			return null;
+		}
 	}
 
 	public void addEdge(int src, int dest) {
