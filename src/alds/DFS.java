@@ -9,6 +9,8 @@ public class DFS {
 	int mVcount;
 	int[][] mGraph;
 	HashSet<Integer> visited = new HashSet<Integer>();
+	Stack<Integer> st = new Stack<Integer>();
+	
 
 	public int getUnvisited(int v) {
 
@@ -31,11 +33,25 @@ public class DFS {
 	public DFS(int vcount, int[][] graph) {
 		mGraph = graph;
 		mVcount = vcount;
-
-		Stack<Integer> st = new Stack<Integer>();
 		visited.add(0);
 		st.push(0);
+		execute();
+		
 
+	}
+	
+	//dfs from src
+	public DFS(int vcount, int[][] graph, int src) {
+		mGraph = graph;
+		mVcount = vcount;
+		visited.add(src);
+		st.push(src);
+		execute();
+		
+
+	}
+	
+	public void execute(){
 		while (!st.isEmpty()) {
 			int curr = st.peek();
 			if (getUnvisited(curr) != Integer.MIN_VALUE) {
@@ -46,7 +62,6 @@ public class DFS {
 				System.out.print(st.pop() + " ");
 			}
 		}
-
 	}
 
 }

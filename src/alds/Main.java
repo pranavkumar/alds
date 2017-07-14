@@ -20,7 +20,8 @@ public class Main {
 		int vcount = g.getVertexCount();
 		Util.printMatrix(vcount, vcount, adj);
 		
-		BFS BFS = new BFS(vcount,adj, 1);
+		DFS dfs = new DFS(vcount,adj, 2);
+		
 		
 		
 	}

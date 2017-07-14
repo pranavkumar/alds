@@ -41,7 +41,7 @@ public class BFS {
 
 	}
 	
-	
+	//bfs from a src 
 	public BFS(int vcount, int[][]graph, int src){
 		mGraph = graph;
 		mVcount = vcount;
