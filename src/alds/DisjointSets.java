@@ -71,10 +71,16 @@ public class DisjointSets {
 				A.parent = B;
 				B.rank = B.rank + 1;
 			} else {
-				throw new RuntimeException("Can not union same nodes.");
+				throw new SameNodeUnionException("Can not union same nodes.");
 			}
 		}
 
+	}
+
+	public class SameNodeUnionException extends RuntimeException {
+		SameNodeUnionException(String msg) {
+			super(msg);
+		}
 	}
 
 }

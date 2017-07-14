@@ -9,10 +9,10 @@ import java.util.Stack;
 
 public class BFS {
 	int mVcount;
+	int mTarget = Integer.MAX_VALUE;
 	int[][] mGraph;
 	HashSet<Integer> visited = new HashSet<Integer>();
 	Queue<Integer> q = new LinkedList<Integer>();
-
 
 	public int getUnvisited(int v) {
 
@@ -40,9 +40,9 @@ public class BFS {
 		execute();
 
 	}
-	
-	//bfs from a src 
-	public BFS(int vcount, int[][]graph, int src){
+
+	// bfs from a src
+	public BFS(int vcount, int[][] graph, int src) {
 		mGraph = graph;
 		mVcount = vcount;
 		visited.add(src);
@@ -52,9 +52,30 @@ public class BFS {
 	}
 	
 	
-	public void execute(){
+	public BFS(int vcount, int[][] graph, int src, int target) {
+		mGraph = graph;
+		mVcount = vcount;
+		mTarget = target;
+		visited.add(src);
+		q.add(src);
+		execute();
+
+	}
+
+	public void execute() {
 		while (!q.isEmpty()) {
 			int curr = q.peek();
+			
+			
+			
+			/*
+			if (curr == mTarget) {
+				while (!q.isEmpty()) {
+					System.out.print(q.poll() + " ");
+				}
+				break;
+			}
+			*/
 			if (getUnvisited(curr) != Integer.MIN_VALUE) {
 				int next = getUnvisited(curr);
 				visited.add(next);
@@ -64,7 +85,5 @@ public class BFS {
 			}
 		}
 	}
-	
-	
-	
+
 }
