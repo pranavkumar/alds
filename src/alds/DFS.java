@@ -64,12 +64,6 @@ public class DFS {
 		while (!st.isEmpty()) {
 			int curr = st.peek();
 			
-			if (curr == mTarget) {
-				while (!st.isEmpty()) {
-					System.out.print(st.pop() + " ");
-				}
-				break;
-			}
 			if (getUnvisited(curr) != Integer.MIN_VALUE) {
 				int next = getUnvisited(curr);
 				visited.add(next);

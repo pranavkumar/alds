@@ -65,17 +65,6 @@ public class BFS {
 	public void execute() {
 		while (!q.isEmpty()) {
 			int curr = q.peek();
-			
-			
-			
-			/*
-			if (curr == mTarget) {
-				while (!q.isEmpty()) {
-					System.out.print(q.poll() + " ");
-				}
-				break;
-			}
-			*/
 			if (getUnvisited(curr) != Integer.MIN_VALUE) {
 				int next = getUnvisited(curr);
 				visited.add(next);
