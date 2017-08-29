@@ -9,20 +9,24 @@ import java.util.Stack;
 
 public class Main {
 
-	@SuppressWarnings("unused")
-	public static void main(String[] args) {
+    @SuppressWarnings("unused")
+    public static void main(String[] args) {
 
-		
-		
-		int x = 1024;
-		int c = 0;
-		
-		while (x != 1) {
-			x = x >> 1;
-			c++;
-		}
-		System.out.println(c);
 
-	}
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int[][] g = new int[n][n];
+
+        for (int i = 0; i < k; i++) {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            g[a][b] = in.nextInt();
+        }
+
+        FordFulkerson fordFulkerson = new FordFulkerson(0, 4, g, n);
+
+
+    }
 
 }
